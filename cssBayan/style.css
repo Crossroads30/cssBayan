@@ -360,6 +360,8 @@ textarea {
     padding: 0.2em 0;
 }
 
+/*------ content start---------*/
+
 body {
   background: #ba4646;
   padding: 3em 0;
@@ -407,15 +409,29 @@ body {
   height: auto;
 }
 
-.accordion_block:hover > .rs-img {
+.accordion__block:hover > .rs-img {
+   padding: 1em 0;
   visibility: visible;
   opacity: 1;
   height: 50%;
   transition: all .6s;
+  cursor: pointer;
 }
+
+.main__accordion:hover .rsw-label {
+   background: #ce8d37;
+}
+
 .rsw-label:hover {
   background: #ce8d37;
 }
+
+.accordion__block:hover  .accordion-logo{
+   -webkit-transform: rotate(-225deg);
+   -moz-transform: rotate(-225deg);
+   transform: rotate(-270deg);
+   transition: transform 0.3s ease-in-out;
+ } 
 
 .rsw-label {
   display: flex;
@@ -431,22 +447,21 @@ body {
 }
 
 .accordion-logo {
-  font-size: 1.2em;
-  line-height: 0.5em;
+   border-style: solid;
+   border-width: 0.3em 0 0.3em 0.6em;
+   border-color: transparent transparent transparent #000000;
   -moz-transition: -moz-transform 0.3s ease-in-out;
   -o-transition: -o-transform 0.3s ease-in-out;
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
 }
 
-.main_accordion img {
+.main__accordion img {
   display: block;
   width: 50%;
   height: 50%;
   margin-left: 50%;
   transform:  translate(-50%);
-  margin-top: 2%;
-  margin-bottom: 2%;
   padding: 1em;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   background: #ce8d37;
@@ -466,22 +481,26 @@ body {
 }
 
 .rsw-input:checked ~ .rs-img {
+   padding: 1em 0;
   visibility: visible;
   opacity: 1;
   height: 50%;
   transition: all .6s;
+  cursor: pointer;
 }
 
 .rsw-input:checked ~ .rsw-label {
   background: #ce8d37;
 }
 
-.rsw-label:hover  .accordion-logo{
-  -webkit-transform: rotate(-225deg);
-  -moz-transform: rotate(-225deg);
-  transform: rotate(-225deg);
-  transition: transform 0.3s ease-in-out;
-} 
+.rsw-input:checked ~ .rsw-label .accordion-logo {
+   -webkit-transform: rotate(-225deg);
+   -moz-transform: rotate(-225deg);
+   transform: rotate(-270deg);
+   /* transition: transform 0.3s ease-in-out; */
+}
+
+
 
 
 
