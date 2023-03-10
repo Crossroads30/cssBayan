@@ -407,28 +407,14 @@ body {
   height: auto;
 }
 
-/*.accordion_block:hover ~ .rs-img {
+.accordion_block:hover > .rs-img {
   visibility: visible;
   opacity: 1;
   height: 50%;
   transition: all .6s;
-}*/
+}
 .rsw-label:hover {
   background: #ce8d37;
-}
-
-.rsw-label:hover ~ .rs-img {
-  visibility: visible;
-  opacity: 1;
-  height: 50%;
-  transition: all .6s;
-}
-
-.rs-img:hover {
-  visibility: visible;
-  opacity: 1;
-  height: 50%;
-  transition: all .6s;
 }
 
 .rsw-label {
@@ -490,14 +476,7 @@ body {
   background: #ce8d37;
 }
 
-.accordion-logo:hover {
-  -webkit-transform: rotate(-225deg);
-  -moz-transform: rotate(-225deg);
-  transform: rotate(-225deg);
-  transition: transform 0.3s ease-in-out;
-}
-
-.rsw-label:hover + .accordion-logo{
+.rsw-label:hover  .accordion-logo{
   -webkit-transform: rotate(-225deg);
   -moz-transform: rotate(-225deg);
   transform: rotate(-225deg);
