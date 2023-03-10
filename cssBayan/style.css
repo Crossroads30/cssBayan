@@ -371,7 +371,7 @@ body {
   align-items: center;
   max-width: 50%;
   margin: 0 auto;
-  font-size: 18px;
+  font-size: 1.2em;
   font-weight: 700;
   padding: 4em;
   /*border: #000 2px solid;*/
@@ -382,7 +382,7 @@ body {
 .header {
   display: flex;
   justify-content: space-between;
-  font-size: 32px;
+  font-size: 1.8em;
   font-weight: 900;
   margin-bottom: 2em;
   width: 100%;
@@ -402,12 +402,39 @@ body {
   width: 100%;
 }
 
-.rsw1:hover {
-  background: #ce8d37;;
+.accordion_block {
+  cursor: pointer;
+  height: auto;
 }
 
-.main label {
-  display: block;
+/*.accordion_block:hover ~ .rs-img {
+  visibility: visible;
+  opacity: 1;
+  height: 50%;
+  transition: all .6s;
+}*/
+.rsw-label:hover {
+  background: #ce8d37;
+}
+
+.rsw-label:hover ~ .rs-img {
+  visibility: visible;
+  opacity: 1;
+  height: 50%;
+  transition: all .6s;
+}
+
+.rs-img:hover {
+  visibility: visible;
+  opacity: 1;
+  height: 50%;
+  transition: all .6s;
+}
+
+.rsw-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 2%;
   /*border-bottom: #000 2px solid;*/
   max-width: 100%;
@@ -417,25 +444,32 @@ body {
   transition:all .2s;
 }
 
+.accordion-logo {
+  font-size: 1.2em;
+  line-height: 0.5em;
+  -moz-transition: -moz-transform 0.3s ease-in-out;
+  -o-transition: -o-transform 0.3s ease-in-out;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
+
 .main_accordion img {
   display: block;
   width: 50%;
   height: 50%;
-  margin-left: auto;
+  margin-left: 50%;
+  transform:  translate(-50%);
   margin-top: 2%;
   margin-bottom: 2%;
   padding: 1em;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   background: #ce8d37;
-  /*transition:all .2s;*/
-
 }
 
 .rs-img {
   visibility: hidden;
   opacity: 0;
   height: 0;
-  /*transition: all .2s;*/
 }
 
 .rsw-input {
@@ -445,27 +479,30 @@ body {
   height: 0;
 }
 
-.rsw-input:checked + .rs-img {
+.rsw-input:checked ~ .rs-img {
   visibility: visible;
   opacity: 1;
   height: 50%;
   transition: all .6s;
 }
 
-
-/*.main_accordion {
-  display: flex;
-
-}*/
-
-/*.main_accordion:hover {
-  height: 100vh;
-}*/
-
-/*.main_accordion {
-  display: none;
-  padding: 20px;
+.rsw-input:checked ~ .rsw-label {
+  background: #ce8d37;
 }
-.main_accordion:target {
-    display: block;
-  }*/
+
+.accordion-logo:hover {
+  -webkit-transform: rotate(-225deg);
+  -moz-transform: rotate(-225deg);
+  transform: rotate(-225deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.rsw-label:hover + .accordion-logo{
+  -webkit-transform: rotate(-225deg);
+  -moz-transform: rotate(-225deg);
+  transform: rotate(-225deg);
+  transition: transform 0.3s ease-in-out;
+} 
+
+
+
