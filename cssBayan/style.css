@@ -499,11 +499,11 @@ body {
 @media (min-width: 820px) {
    body {
       background: #ba4646;
-      padding: 7em 4em;
+      padding: 7.5rem 4.5rem;
    }
 
    .content-conteiner {
-      font-size: 1.8em;
+      font-size: 1.6em;
       font-weight: 700;
       padding: 3em;
    }
@@ -514,7 +514,7 @@ body {
       margin-bottom: 2em;
    }
 
-   .accordion__block:hover>.rs-img {
+   .accordion__block:hover .rs-img {
       padding: 1em 0;
       visibility: visible;
       opacity: 1;
@@ -529,7 +529,7 @@ body {
       transition: all 0.2s ease-in-out;
    }
 
-   .main__accordion:hover .rsw-label {
+   .main__accordion:hover .rsw-label p {
       background: #ce8d37;
    }
 
@@ -547,7 +547,19 @@ body {
 
 @media (min-width: 1920px) {
    body {
-      padding: 10em 6em;
+      padding: 17rem 13rem;
+   }
+
+   .content-conteiner {
+      font-size: 3em;
+      font-weight: 700;
+      padding: 3em;
+   }
+
+   .header {
+      font-size: 2em;
+      font-weight: 900;
+      margin-bottom: 0.2em;
    }
 }
 
@@ -572,7 +584,7 @@ body {
 
 
 
-.rsw-label {
+.rsw-label p {
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -621,7 +633,7 @@ body {
    height: 0;
 }
 
-.rsw-input:checked~.rs-img {
+.rsw-input:checked ~ .rsw-label .rs-img {
    padding: 1em 0;
    visibility: visible;
    opacity: 1;
@@ -630,11 +642,11 @@ body {
    cursor: pointer;
 }
 
-.rsw-input:checked~.rsw-label {
+.rsw-input:checked ~ .rsw-label p {
    background: #ce8d37;
 }
 
-.rsw-input:checked~.rsw-label .accordion-logo {
+.rsw-input:checked ~ .rsw-label .accordion-logo {
    -webkit-transform: rotate(-225deg);
    -moz-transform: rotate(-225deg);
    transform: rotate(-270deg);
