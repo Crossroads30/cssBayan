@@ -469,19 +469,17 @@ textarea {
 
 body {
    background: #ba4646;
-   padding: 0.3em 0;
 }
 
 .content-conteiner {
    display: flex;
    flex-direction: column;
    align-items: center;
-   max-width: 80%;
+   max-width: 75%;
    margin: 0 auto;
-   font-size: 0.7em;
+   font-size: calc(0.7em + (16 + 16 * 0.7) * ((100vw - 320px) / 1280));
    font-weight: 900;
-   padding: 2.5em;
-   /*border: #000 2px solid;*/
+   padding: 3rem;
    background: #f69d05;
    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
@@ -491,76 +489,9 @@ body {
    justify-content: space-between;
    font-size: 2em;
    font-weight: 900;
-   margin-bottom: 1em;
+   margin-bottom: 3rem;
    width: 100%;
    font-stretch: extra-expanded;
-}
-
-@media (min-width: 820px) {
-   body {
-      background: #ba4646;
-      padding: 7.5rem 4.5rem;
-   }
-
-   .content-conteiner {
-      font-size: 1.6em;
-      font-weight: 700;
-      padding: 3em;
-   }
-
-   .header {
-      font-size: 2em;
-      font-weight: 900;
-      margin-bottom: 2em;
-   }
-
-   .accordion__block:hover .rs-img {
-      padding: 1em 0;
-      visibility: visible;
-      opacity: 1;
-      height: 50%;
-      transition: all .6s;
-      cursor: pointer;
-   }
-
-   .main:hover * .accordion-logo {
-      visibility: visible;
-      opacity: 1;
-      transition: all 0.2s ease-in-out;
-   }
-
-   .main__accordion:hover .rsw-label p {
-      background: #ce8d37;
-   }
-
-   .rsw-label:hover {
-      background: #ce8d37;
-   }
-
-   .accordion__block:hover .accordion-logo {
-      -webkit-transform: rotate(-225deg);
-      -moz-transform: rotate(-225deg);
-      transform: rotate(-270deg);
-      transition: all 0.2s ease-in-out;
-   }
-}
-
-@media (min-width: 1920px) {
-   body {
-      padding: 17rem 13rem;
-   }
-
-   .content-conteiner {
-      font-size: 3em;
-      font-weight: 700;
-      padding: 3em;
-   }
-
-   .header {
-      font-size: 2em;
-      font-weight: 900;
-      margin-bottom: 0.2em;
-   }
 }
 
 .header h1 {
@@ -579,10 +510,14 @@ body {
 
 .accordion_block {
    cursor: pointer;
-   height: auto;
 }
 
-
+.rsw-input {
+   appearance: none;
+   -webkit-appearance: none;
+   width: 0;
+   height: 0;
+}
 
 .rsw-label p {
    display: flex;
@@ -593,7 +528,25 @@ body {
    color: #000000;
    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
    cursor: pointer;
-   transition: all .2s;
+   transition: all 0.2s;
+}
+
+.rsw-label img {
+   display: block;
+   width: 50%;
+   height: 50%;
+   margin-left: 50%;
+   transform: translate(-50%);
+   padding: 1rem;
+   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+   background: #ce8d37;
+   transition: all 0.2s;
+}
+.rs-img {
+   visibility: hidden;
+   opacity: 0;
+   height: 0;
+   transition: all 0.2s;
 }
 
 .accordion-logo {
@@ -609,37 +562,51 @@ body {
    transition: all 0.2s ease-in-out;
 }
 
-.main__accordion img {
-   display: block;
-   width: 50%;
-   height: 50%;
-   margin-left: 50%;
-   transform: translate(-50%);
-   padding: 1em;
-   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-   background: #ce8d37;
-}
-
-.rs-img {
-   visibility: hidden;
-   opacity: 0;
-   height: 0;
-}
-
-.rsw-input {
-   appearance: none;
-   -webkit-appearance: none;
-   width: 0;
-   height: 0;
-}
-
-.rsw-input:checked ~ .rsw-label .rs-img {
-   padding: 1em 0;
+.accordion__block:hover .rs-img {
+   padding: 2rem 0;
    visibility: visible;
    opacity: 1;
    height: 50%;
-   transition: all .6s;
+   transition: all 0.2s;
    cursor: pointer;
+}
+
+.main:hover * .accordion-logo {
+   visibility: visible;
+   opacity: 1;
+   transition: all 0.2s ease-in-out;
+}
+
+.accordion__block:hover .rsw-label p {
+   background: #ce8d37;
+}
+
+.rsw-label:hover {
+   background: #ce8d37;
+}
+
+.accordion__block:hover .accordion-logo {
+   -webkit-transform: rotate(-225deg);
+   -moz-transform: rotate(-225deg);
+   transform: rotate(-270deg);
+   transition: all 0.2s ease-in-out;
+}
+
+.rsw-input:checked ~ .rsw-label .rs-img {
+   padding: 1rem 0 0 0;
+   visibility: visible;
+   opacity: 1;
+   height: 50%;
+   transition: all 0.2s;
+   cursor: pointer;
+}
+
+.rsw-input:checked ~ .rsw-label .accordion-logo {
+   -webkit-transform: rotate(-225deg);
+   -moz-transform: rotate(-225deg);
+   transform: rotate(-270deg);
+   visibility: visible;
+   opacity: 1;
 }
 
 .rsw-input:checked ~ .rsw-label p {
@@ -650,5 +617,42 @@ body {
    -webkit-transform: rotate(-225deg);
    -moz-transform: rotate(-225deg);
    transform: rotate(-270deg);
-   /* transition: transform 0.3s ease-in-out; */
+}
+
+@media (min-width: 820px) {
+   .header {
+      font-size: 2em;
+      font-weight: 900;
+      margin-bottom: 3rem;
+   }
+   .content-conteiner {
+      font-size: calc(2em + 2em * (100vw / 1920));
+      font-weight: 700;
+      padding: 3em;
+      max-width: 65%;
+   }
+
+   .rsw-label img {
+      padding: 2rem;
+      transition: all .6s;
+   }
+
+   .rsw-input:checked ~ .rsw-label .rs-img {
+      padding: 2rem 0 0.5rem 0;
+   }
+
+}
+
+@media (min-width: 1920px) {
+   .content-conteiner {
+      font-size: 3em;
+      font-weight: 700;
+      padding: 10rem;
+   }
+
+   .header {
+      font-size: 2em;
+      font-weight: 900;
+      margin-bottom: 5rem;
+   }
 }
