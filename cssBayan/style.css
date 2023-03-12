@@ -526,9 +526,9 @@ body {
    padding: 2%;
    max-width: 100%;
    color: #000000;
-   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
    cursor: pointer;
    transition: all 0.2s;
+   border-bottom: #b57b2f solid;
 }
 
 .rsw-label img {
@@ -547,6 +547,16 @@ body {
    opacity: 0;
    height: 0;
    transition: all 0.2s;
+}
+
+.accordion__block:active .rsw-label p {
+   /* opacity: 0.5; */
+  color: rgba(0,0,0,.2);
+}
+
+.accordion__block:active .rsw-label img {
+   background: rgba(0,0,0,.2);
+   /* opacity: 0.5; */
 }
 
 .accordion-logo {
@@ -571,6 +581,10 @@ body {
    cursor: pointer;
 }
 
+.main:hover * .rsw-label p {
+   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+} 
+
 .main:hover * .accordion-logo {
    visibility: visible;
    opacity: 1;
@@ -578,7 +592,8 @@ body {
 }
 
 .accordion__block:hover .rsw-label p {
-   background: #ce8d37;
+   /* background: #ce8d37; */
+   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .rsw-label:hover {
@@ -601,6 +616,10 @@ body {
    cursor: pointer;
 }
 
+.rsw-input:checked ~ .rsw-label img {
+   background: #ce8d37;
+}
+
 .rsw-input:checked ~ .rsw-label .accordion-logo {
    -webkit-transform: rotate(-225deg);
    -moz-transform: rotate(-225deg);
@@ -610,7 +629,9 @@ body {
 }
 
 .rsw-input:checked ~ .rsw-label p {
+   color: #000000;
    background: #ce8d37;
+   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .rsw-input:checked ~ .rsw-label .accordion-logo {
