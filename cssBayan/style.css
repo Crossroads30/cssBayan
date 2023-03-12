@@ -479,7 +479,7 @@ body {
    margin: 0 auto;
    font-size: calc(0.7em + (16 + 16 * 0.7) * ((100vw - 320px) / 1280));
    font-weight: 900;
-   padding: 3rem;
+   padding: 8% 8% 3.5%;
    background: #f69d05;
    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
@@ -528,7 +528,7 @@ body {
    color: #000000;
    cursor: pointer;
    transition: all 0.2s;
-   border-bottom: #b57b2f solid;
+   border: #b57b2f 0.1rem solid;
 }
 
 .rsw-label img {
@@ -572,6 +572,23 @@ body {
    transition: all 0.2s ease-in-out;
 }
 
+.footer {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+   font-size: 0.7em;
+   color: #000;
+   padding-top: 10%;
+}
+
+.footer p {
+   cursor: default;
+}
+
+.footer a {
+   width: 10%;
+}
+
 @media (hover: hover) and (pointer: fine) {
    .accordion__block:hover .rs-img {
       padding: 2rem 0;
@@ -607,8 +624,7 @@ body {
       transform: rotate(-270deg);
       transition: all 0.2s ease-in-out;
    }
-
- }
+}
 
 .rsw-input:checked ~ .rsw-label .rs-img {
    padding: 1rem 0 0 0;
@@ -652,7 +668,7 @@ body {
    .content-conteiner {
       font-size: calc(2em + 2em * (100vw / 1920));
       font-weight: 700;
-      padding: 3em;
+      padding: 5rem 5rem 2rem ;
       max-width: 65%;
    }
 
@@ -665,13 +681,22 @@ body {
       padding: 2rem 0 0.5rem 0;
    }
 
+   .rsw-label p {
+      border-bottom: #b57b2f 0.2rem solid;
+   }
+
+   .footer {
+      font-size: 0.8em;
+   }
+   
+
 }
 
 @media (min-width: 1920px) {
    .content-conteiner {
       font-size: 3em;
       font-weight: 700;
-      padding: 10rem;
+      padding: 10rem 10rem 4rem;
    }
 
    .header {
